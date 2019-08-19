@@ -11,5 +11,6 @@ def tweet():
             # print(row[1])
             try:
                 api.update_status(row[1])
+                print(row[1])
             except:
                 continue

@@ -1,5 +1,8 @@
-# Where On Earth ID for Brazil is 23424768.
-japan_trend = 23424856
-world_trend = 1
+from TwitterAPI_class import api
 
-japan_trends = api.trends_place(japan_trend)
+
+def like():
+    tweets = api.home_timeline(count=)
+    tweet = tweets[0]
+    print(f"Liking tweet {tweet.id} of {tweet.author.name}")
+    api.create_favorite(tweet.id)
