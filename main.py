@@ -2,7 +2,8 @@ from tweet import tweet
 from like import like
 from search_and_like import search_like
 import tweepy
-from error_handler import DataChecker
+from error_handler import DataChecker, APIChecker
+
 
 user_input = input('Enter "t" if you want to tweet from csv file, '
                    '"l" if you like to "Like" from your timeline, '
@@ -12,19 +13,10 @@ user_request = DataChecker(user_input, "[tls]").check_data_short()
 
 
 if user_request == "t":
-    try:
-        tweet()
-    except tweepy.error.TweepError as e:
-        print(e.reason)
+    APIChecker(tweet())
 elif user_request == "l":
-    try:
-        like()
-    except tweepy.error.TweepError as e:
-        print(e.reason)
+    APIChecker(like())
 elif user_request == "s":
-    try:
-        search_like()
-    except tweepy.error.TweepError as e:
-        print(e.reason)
+    APIChecker(search_like())
 else:
     print("You entered wrong data")

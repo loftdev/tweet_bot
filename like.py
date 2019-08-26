@@ -7,3 +7,4 @@ def like():
     print("Liking")
     print(f"Tweet {tweet.id} of {tweet.author.name}")
     api.create_favorite(tweet.id)
+

@@ -1,4 +1,5 @@
 import re
+import tweepy
 
 
 class DataChecker:
@@ -18,17 +19,33 @@ class DataChecker:
 
     def check_data_short(self):
         data = self.user_input
-        x = re.findall(self.data_type, data)
         count = 0
-        while count < 4:
+        while count < 3:
+            x = re.findall(self.data_type, data)
+            print(x)
+            print(len(data))
             if len(data) > 1:
+                data = input(f"You exceed the number of character to be entered! try remaining {3 - count}! ")
                 count += 1
-                data = input("You exceed the number of character to be entered! Enter again!")
-                return data
             else:
-                if x == "t" or x == "l" or x == "s":
-                    return self.user_input
-                else:
+
+                if not x:
+                    print(len(x))
+                    data = input(f"Enter the right letter again! try remaining {3 - count}! ")
                     count += 1
-                    data = input("Enter the right letter again!")
+                elif x[0] == "t" or x[0] == "l" or x[0] == "s":
                     return data
+                else:
+                    data = input(f"Enter the right letter again! try remaining {3 - count}! ")
+                    count += 1
+
+
+class APIChecker:
+    def __init__(self, test):
+        self.test = test
+
+    def api_error(self):
+        try:
+            self.test
+        except tweepy.error.TweepError:
+            print("API error")

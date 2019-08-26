@@ -18,4 +18,4 @@ def tweet():
                 if e.api_code == 187:
                     continue
                 else:
-                    print(e.reason)
+                    print("API error")
