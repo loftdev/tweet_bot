@@ -3,11 +3,10 @@ import csv
 import tweepy
 from error_handler import InputErrorHandling
 
-csvFilePath = "csv_file/product_info.csv"
-file = InputErrorHandling(csvFilePath).check_csv()
-
 
 class Tweet:
+    csvFilePath = "csv_file/product_info.csv"
+    file = InputErrorHandling(csvFilePath).check_csv()
 
     def tweet_all(self):
         with open(file, mode='r') as csv_file:
