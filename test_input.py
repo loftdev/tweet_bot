@@ -1,30 +1,33 @@
-from unittest import TestCase
-from unittest.mock import patch
 from input_handler import one_letter_input
+import unittest
 
 
 # test  one_letter_input()
-def answer():
-    ans = one_letter_input('l')
-    if ans == 't':
-        return 'you entered t'
-    if ans == 'l':
-        return 'you entered l'
-    if ans == 's':
-        return 'you entered s'
+def text_input(x):
+    return one_letter_input(x)
 
 
-class Test(TestCase):
+class TestOneLetterInput(unittest.TestCase):
 
-    # get_input will return 'yes' during this test
-    @patch('yourmodule.get_input', return_value='t')
-    def test_answer_t(self, input):
-        self.assertEqual(answer(), 'you entered t')
+    def test_input_t(self):
+        self.assertEqual(text_input('t'), 't')
 
-    @patch('yourmodule.get_input', return_value='l')
-    def test_answer_l(self, input):
-        self.assertEqual(answer(), 'you entered l')
+    def test_input_l(self):
+        self.assertEqual(text_input('l'), 'l')
 
-    @patch('yourmodule.get_input', return_value='s')
-    def test_answer_s(self, input):
-        self.assertEqual(answer(), 'you entered s')
+    def test_input_s(self):
+        self.assertEqual(text_input('s'), 's')
+
+    def test_input_exceed(self):
+        input_text = [
+            "dshojhoh@o@owjwjjjdfjnwrj",
+        ]
+        result = ""
+        for i in input_text:
+            result = one_letter_input(i)
+            print(result)
+        self.assertEqual(result, None)
+
+
+if __name__ == '__main__':
+    unittest.main()

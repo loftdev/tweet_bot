@@ -21,6 +21,7 @@ def one_letter_input(x):
         else:
             count += 1
             data = input(f"Enter the right letter again! try remaining {4 - count}! ")
+    return print("You entered wrong data")
 
 
 def keyword_input(x):

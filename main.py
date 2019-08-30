@@ -29,5 +29,3 @@ elif input_data == "s":
     except tweepy.error.TweepError:
         print("API error")
 
-else:
-    print("You entered wrong data")
