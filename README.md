@@ -13,7 +13,9 @@ this twitter bot will send tweet automatically base on the csv data you save. It
 
 # Screenshots
 ## From the csv result select the expensive and the cheapest item and tweet
-![csv file]('https://github.com/loftdev/tweet_bot/blob/master/image/csv.png')
+### csv file
+![csv file](https://github.com/loftdev/tweet_bot/blob/master/image/csv.png)
+### Tweet result
 ![Tweet result after the program run](https://github.com/loftdev/tweet_bot/blob/master/image/tweet_sort.png)
 ## Demo Video
 [demo](https://github.com/loftdev/tweet_bot/blob/master/image/tweet_sort.mov)
