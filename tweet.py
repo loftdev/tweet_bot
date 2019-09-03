@@ -5,10 +5,10 @@ from input_handler import csv_data
 
 
 csv_path = "csv_file/product_info.csv"
-file = csv_data(csv_path)
 
 
 def tweet_all():
+    file = csv_data(csv_path)
     with open(file, mode='r') as csv_file:
         csv_reader = csv.reader(csv_file)
 
@@ -25,7 +25,11 @@ def tweet_all():
 
 
 def tweet_sort():
-    input_file = csv.DictReader(open(file))
+    file = csv_data(csv_path)
+    try:
+        input_file = csv.DictReader(open(file))
+    except TypeError:
+        return print("No csv file")
 
     expensive_price = None
     expensive_product = None
@@ -49,3 +53,5 @@ def tweet_sort():
         api.update_status(result)
     else:
         print("The file does not contain any people.")
+
+

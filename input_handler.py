@@ -36,9 +36,11 @@ def keyword_input(x):
 
 
 def csv_data(x):
-    csv_path = "csv_file/product_info.csv"
-    path = pathlib.Path(csv_path)
+    path = pathlib.Path(x)
     if path.exists():
         return x
     else:
         print("File not found")
+
+
+
