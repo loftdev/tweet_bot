@@ -17,9 +17,9 @@ this twitter bot will send tweet automatically base on the csv data you save. It
 ### csv file
 ![csv file](https://github.com/loftdev/tweet_bot/blob/master/image/data_collected.png)
 ### Tweet result
-![Tweet result after the program run](https://github.com/loftdev/tweet_bot/blob/master/image/tweet_bot_demo.mov)
+![Tweet result after the program run](https://github.com/loftdev/tweet_bot/blob/master/image/result_tweet.png)
 ## Demo Video
-[demo](https://github.com/loftdev/tweet_bot/blob/master/image/tweet_sort.mov)
+[demo](https://github.com/loftdev/tweet_bot/blob/master/image/tweet_bot_demo.mov)
 ## From the csv tweet all the result (csv sample is different from above)
 ![sample tweet result](https://github.com/loftdev/tweet_bot/blob/master/image/tweetpic.png)
 ## Demo Video
