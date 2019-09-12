@@ -7,7 +7,8 @@ import tweepy
 
 user_input = input('Enter "t" if you want to tweet from csv file, '
                    '"l" if you like to "Like" from your timeline, '
-                   '"s" if you want to search and like the top result: ').lower()
+                   '"s" if you want to search and like the top '
+                   'result: ').lower()
 input_data = one_letter_input(user_input)
 
 
@@ -28,4 +29,3 @@ elif input_data == "s":
         search_like()
     except tweepy.error.TweepError:
         print("API error")
-
